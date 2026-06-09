@@ -211,3 +211,8 @@ http://localhost:8080/api/students
 ## Status
 
 The project is working locally with Spring Boot, MySQL, and Postman.
+
+## System Architecture Diagram
+
+<img width="1448" height="1086" alt="student management api" src="https://github.com/user-attachments/assets/bebc51b4-996e-4854-9b51-4d985a9756db" />
+
