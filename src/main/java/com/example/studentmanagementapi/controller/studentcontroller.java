@@ -1,6 +1,6 @@
 package com.example.studentmanagementapi.controller;
-import com.example.studentapi.model.Student;
-import com.example.studentapi.service.StudentService;
+import com.example.studentmanagementapi.model.student;
+import com.example.studentmanagementapi.service.studentservice;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,38 +11,38 @@ import java.util.List;
 
 public class studentcontroller {
 
-    private final StudentService studentService;
+    private final studentservice studentservice;
 
-    public StudentController(StudentService studentService) {
-        this.studentService = studentService;
+    public studentcontroller(studentservice studentservice) {
+        this.studentservice = studentservice;
     }
 
     @PostMapping
-    public Student addStudent(@RequestBody Student student) {
-        return studentService.addStudent(student);
+    public student addStudent(@RequestBody student student) {
+        return studentservice.addStudent(student);
     }
 
     @GetMapping
-    public List<Student> getAllStudents() {
-        return studentService.getAllStudents();
+    public List<student> getAllStudents() {
+        return studentservice.getAllStudents();
     }
 
     @GetMapping("/{id}")
-    public Student getStudentById(@PathVariable Long id) {
-        return studentService.getStudentById(id);
+    public student getStudentById(@PathVariable Long id) {
+        return studentservice.getStudentById(id);
     }
 
     @PutMapping("/{id}")
-    public Student updateStudent(
+    public student updateStudent(
             @PathVariable Long id,
-            @RequestBody Student student
+            @RequestBody student student
     ) {
-        return studentService.updateStudent(id, student);
+        return studentservice.updateStudent(id, student);
     }
 
     @DeleteMapping("/{id}")
     public String deleteStudent(@PathVariable Long id) {
-        studentService.deleteStudent(id);
+        studentservice.deleteStudent(id);
         return "Student deleted successfully";
     }
 }
